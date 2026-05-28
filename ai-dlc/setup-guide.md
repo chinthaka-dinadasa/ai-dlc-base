@@ -54,9 +54,34 @@ Onboarding AI-DLC into an existing codebase requires three preparatory phases be
 
 ### Phase M1 — Codebase Archaeology Analysis
 
+#### M1.0 — Scope Agreement (Required Before Any Analysis)
+
+Large codebases cannot be analysed in a single context window. Before reading any code, the agent must ask the engineer to define the analysis scope.
+
+Ask the engineer:
+
+> "This codebase may be too large to analyse in one pass without overloading context. To keep each analysis pass focused and accurate, I'd like to work through it in segments.
+>
+> Please tell me:
+> 1. Which modules, services, or folders are the highest priority for AI-DLC onboarding?
+> 2. Are there any areas I should skip entirely for now (e.g. legacy code not being actively worked on, third-party code, generated files)?
+> 3. Should I analyse one segment at a time and report findings before moving to the next, or would you prefer a summary across all agreed segments?"
+
+Record the engineer's answers. Use them to define **analysis segments** — named, bounded slices of the codebase (e.g. "auth service", "payments module", "shared UI components"). Each segment is analysed independently across M1.1–M1.4, with findings reported to the engineer before moving to the next segment.
+
+**Rules for segmented analysis:**
+- Never read beyond the agreed segment boundary in a single pass
+- After completing each segment, present a findings summary and ask the engineer to confirm before continuing to the next segment
+- If a segment itself is too large for one context window, ask the engineer to break it down further before proceeding
+- Keep a running segment log: `Segment | Status | Key findings` — update it after each segment completes
+
+Only proceed to M1.1 once at least one segment is agreed.
+
+---
+
 #### M1.1 — Architecture Mapping
 
-- Read the codebase module by module
+- Read the codebase module by module (within the agreed segment)
 - Generate business-language descriptions of each module (what it does, not how)
 - Produce a capability map: what the system does as a whole
 - Identify service boundaries, integration points, and data flows
