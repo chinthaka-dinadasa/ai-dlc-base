@@ -248,11 +248,14 @@ For fresh projects the agent cannot read a codebase to populate the master rule 
 8. **First capability**
    > "What is the first feature or capability you want to build? Give it a name and one sentence describing what it does for the user."
 
+9. **Documentation archive threshold**
+   > "AI-DLC generates operational documents over time (retros, improvement files, unit files, bolt files). These can be compacted and archived periodically using the compact-docs skill. How many months old must a document be before it qualifies for archiving? (Common choices: 3, 6, or 12 months. This can be changed later.)"
+
 ---
 
-Once all eight questions are answered, the agent has enough to:
+Once all nine questions are answered, the agent has enough to:
 - Create the folder structure (Step 1)
-- Write the master rule file with Sections 1–5 and Section 8 fully populated
+- Write the master rule file with Sections 1–5, Section 8, and Process Configuration fully populated
 - Write an initial first intent file from the answer to question 8
 - Flag Sections 6 and 7 (workflow and review) as pre-populated from the guide defaults
 
@@ -275,6 +278,7 @@ ai-dlc/
     mob-elab-prompts.md      ← interactive protocol and prompts for elaboration sessions
     review-checklist.md      ← structured lens for reviewing AI output
     unit-template.md         ← how to write a unit (reference doc)
+    compact-docs.md          ← engineer-triggered skill to archive old operational documents
   guidelines/
     domain-glossary.md       ← canonical business terms used in code and prompts
     edge-cases.md            ← known failure modes to check before generating code
@@ -436,6 +440,20 @@ Link to `ai-dlc/skills/review-checklist.md` for the full checklist (GitHub Copil
 
 A table mapping common needs to their files. Engineers and the AI both use this to navigate the framework.
 
+### Section 9 — Process Configuration
+
+A single table of project-level process settings that govern AI-DLC behaviour. Populate from the setup interview answers. Every value here can be changed by the project lead at any time by editing this section.
+
+```markdown
+## 9. Process Configuration
+
+| Setting | Value | Notes |
+|---|---|---|
+| **Archive threshold** | [X] months | Documents older than this qualify for archiving via the compact-docs skill |
+```
+
+The archive threshold is read by the `compact-docs` skill at runtime. If this section is absent, the skill will ask the engineer for the value before proceeding.
+
 ---
 
 ## Step 3 — Write the Rules Files
@@ -510,6 +528,12 @@ Key items that must be present:
 - Diff checked against system boundaries in `architecture.md`
 - Behavioral trade-offs confirmed before accepting output
 - For wrapper/layout components: existing files grepped for patterns the new component will duplicate before generation
+
+### `skills/compact-docs.md`
+
+The compact-docs skill is engineer-triggered and must never run automatically. It archives operational documents older than the project's configured threshold to keep the active workspace manageable without losing institutional memory.
+
+Copy this file verbatim from the base repo (`ai-dlc/skills/compact-docs.md`). No customisation is needed — the archive threshold is read from the master rule file Process Configuration section at runtime.
 
 ---
 
