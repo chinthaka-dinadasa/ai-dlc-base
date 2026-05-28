@@ -41,13 +41,13 @@ Ask the engineer:
 
 ### Step 3-F — Run the structured interview
 
-Run the eight-question interview defined in `ai-dlc/setup-guide.md` under **Fresh Project — Structured Interview**. Ask one question at a time. Wait for each answer before continuing. Do not skip questions.
+Run the nine-question interview defined in `ai-dlc/setup-guide.md` under **Fresh Project — Structured Interview**. Ask one question at a time. Wait for each answer before continuing. Do not skip questions.
 
 ### Step 4-F — Create all files
 
-Once all eight questions are answered, execute Steps 1–9 of the setup guide in order:
+Once all nine questions are answered, execute Steps 1–9 of the setup guide in order:
 1. Create the full `ai-dlc/` folder structure with all template files.
-2. Write the master rule file (all 8 sections) using interview answers for Sections 1–5.
+2. Write the master rule file (all 9 sections) using interview answers for Sections 1–5 and Section 9.
 3. Write all `rules/` files using interview answers and guide defaults.
 4. Write all `skills/` files from the templates in this base repo.
 5. Write all `guidelines/` files (domain glossary pre-populated from interview question 6; others as stubs).
