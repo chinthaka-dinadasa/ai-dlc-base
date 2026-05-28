@@ -15,7 +15,7 @@ You are about to onboard this repository to the AI-DLC framework. Read and follo
 ### Step 0 — Orient yourself
 
 1. Read `ai-dlc/setup-guide.md` from top to bottom before taking any action.
-2. Check whether any AI-DLC files already exist in this repo (look for `ai-dlc/rules/`, `ai-dlc/ops/`, a master rule file at the repo root or `.github/`). If any exist, report what you found and ask the engineer whether to extend the existing setup or start fresh.
+2. Check whether AI-DLC has already been set up in this repo. Look for: `ai-dlc/rules/`, `ai-dlc/skills/`, `ai-dlc/guidelines/`, or a master rule file at the repo root (`CLAUDE.md`, `.cursorrules`) or `.github/copilot-instructions.md`. **Do not treat the presence of `ai-dlc/ops/` alone as evidence of existing setup** — those template files are included in the base repo and are copied over as part of the standard install. If any of the above indicators exist, report what you found and ask the engineer whether to extend the existing setup or start fresh.
 3. Do not create or modify any files until Step 0 is complete.
 
 ### Step 1 — Identify the AI tool
