@@ -15,7 +15,21 @@ You are about to onboard this repository to the AI-DLC framework. Read and follo
 ### Step 0 — Orient yourself
 
 1. Read `ai-dlc/setup-guide.md` from top to bottom before taking any action.
-2. Check whether AI-DLC has already been set up in this repo. Look for: `ai-dlc/rules/`, `ai-dlc/skills/`, `ai-dlc/guidelines/`, or a master rule file at the repo root (`CLAUDE.md`, `.cursorrules`) or `.github/copilot-instructions.md`. **Do not treat the presence of `ai-dlc/ops/` alone as evidence of existing setup** — those template files are included in the base repo and are copied over as part of the standard install. If any of the above indicators exist, report what you found and ask the engineer whether to extend the existing setup or start fresh.
+2. Check whether AI-DLC has already been set up in this repo by looking for files that are **only created during onboarding** — not files that ship with the base repo. The following are reliable indicators of an existing setup:
+   - A master rule file at the repo root: `CLAUDE.md`, `.cursorrules`, or `.github/copilot-instructions.md`
+   - Any of these generated rules files: `ai-dlc/rules/prompt-quality-gate.md`, `ai-dlc/rules/code-standards.md`, `ai-dlc/rules/security.md`, `ai-dlc/rules/architecture.md`
+   - Any of these generated skills files: `ai-dlc/skills/mob-elab-prompts.md`, `ai-dlc/skills/review-checklist.md`, `ai-dlc/skills/unit-template.md`
+   - Any file inside `ai-dlc/guidelines/`
+   - `ai-dlc/Instructions2FDE.md`
+
+   **Do not treat the following as evidence of existing setup** — they are part of the base repo and are present in every fresh copy:
+   - `ai-dlc/ops/` and all files inside it
+   - `ai-dlc/rules/engagement.md`
+   - `ai-dlc/skills/compact-docs.md`
+   - `ai-dlc/setup-guide.md`
+   - `ai-dlc/onboard.md`
+
+   If any indicator from the first list exists, report what you found and ask the engineer whether to extend the existing setup or start fresh.
 3. Do not create or modify any files until Step 0 is complete.
 
 ### Step 1 — Identify the AI tool
