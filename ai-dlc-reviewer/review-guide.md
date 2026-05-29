@@ -307,12 +307,56 @@ If the team's structure differs significantly from the AI-DLC recommended layout
 
 ---
 
+#### Gap Analysis
+
+Map every finding to the specific AI-DLC principle it violates and state the distance between the team's current practice and the target state. Present as a table.
+
+| # | Domain | AI-DLC Principle | Current State | Target State | Gap Severity |
+|---|---|---|---|---|---|
+| 1 | [Domain] | [The principle being violated — e.g. "Every AC must have Given/When/Then structure"] | [What the team is doing now] | [What aligned practice looks like] | Critical / Important / Advisory |
+
+After the table, write a short paragraph (3–5 sentences) summarising the overall gap pattern: which domains are most misaligned, whether the gaps are concentrated in a single area or spread across the process, and whether the issues suggest a systemic problem (e.g. the process is documented but not followed) or isolated gaps in specific artifacts.
+
+---
+
+#### Remediation Plan
+
+> **Produce this section only if there are Critical or Important findings. If all findings are Advisory, write: "No remediation plan required — all gaps are advisory refinements. Address them at the next retro."**
+
+Group actions into three time horizons. For each action, name the exact change required, the specific file or practice to modify, and how the team will know the action is complete.
+
+**Immediate — before the next bolt runs**
+
+These are Critical findings that are actively putting output quality or process integrity at risk.
+
+| # | Action | What to change | Verification |
+|---|---|---|---|
+| 1 | [What to do — specific and imperative] | [File name / section / practice] | [How you know it is done — observable signal] |
+
+**Short-term — address at the next retro**
+
+These are Important findings that weaken the process over time but do not block the next bolt.
+
+| # | Action | What to change | Verification |
+|---|---|---|---|
+| 1 | [What to do] | [File name / section / practice] | [Observable signal] |
+
+**Long-term — over the next two to three bolts**
+
+Structural changes that require deliberate iteration — new intent files, architectural adjustments, or process habits that take time to establish.
+
+| # | Action | What to change | Verification |
+|---|---|---|---|
+| 1 | [What to do] | [File name / section / practice] | [Observable signal] |
+
+---
+
 #### First Action
 
-> [One sentence: the single highest-impact change the team should make before the next bolt runs. Name the specific file or practice, not a general improvement.]
+> [One sentence: the single highest-impact change the team should make before the next bolt runs — drawn from the Immediate tier of the Remediation Plan. Name the specific file or practice, not a general improvement.]
 
 ---
 
 #### Patterns Worth Monitoring
 
-[Any recurring themes across domains that did not reach Critical severity but suggest a direction the process is drifting. Optional — omit if none.]
+[Any recurring themes across domains that did not reach Critical severity but suggest a direction the process is drifting. Flag these so the team can watch for them over the next few bolts. Optional — omit if none.]

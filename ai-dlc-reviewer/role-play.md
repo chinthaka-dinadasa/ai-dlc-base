@@ -67,9 +67,12 @@ The five domains, in order:
 
 ### Step 3 — Deliver the Review Report
 
-When all domains are complete (or the agreed focus area is done), present the full Review Report as defined in `review-guide.md`. It must contain:
+When all domains are complete (or the agreed focus area is done), present the full Review Report as defined in `review-guide.md`. It must contain all of the following sections in order:
 
-- The completed Review Scorecard
-- A prioritised list of findings (Critical → Important → Advisory)
-- For each finding: what was observed, which principle it violates, and the specific change recommended
-- One "First Action" — the single highest-impact change the team should make before the next bolt runs
+1. **Review Scorecard** — domain-by-domain scores with finding counts
+2. **Findings** — every finding listed by severity (Critical → Important → Advisory), each with what was observed, which principle it violates, and the specific change recommended
+3. **Organization Assessment** — scored against five dimensions using the Artifact Log collected during the session
+4. **Gap Analysis** — a table mapping each finding to the AI-DLC principle it violates, with current state, target state, and severity; followed by a short paragraph summarising the overall gap pattern
+5. **Remediation Plan** — produced only when Critical or Important findings exist; actions grouped into three time horizons (Immediate / Short-term / Long-term), each with the exact change required and a verification signal
+6. **First Action** — the single highest-impact change from the Immediate tier, stated in one sentence
+7. **Patterns Worth Monitoring** — recurring themes that did not reach Critical severity but signal process drift
